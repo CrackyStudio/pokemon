@@ -1,6 +1,6 @@
-import { UserController } from 'controller/userController';
-import { checkJwt } from 'middleware/checkJwt';
-import { isAdmin } from 'middleware/isAdmin';
+import { UserController } from 'controllers/userController';
+import { checkJwt } from 'middlewares/checkJwt';
+import { isAdmin } from 'middlewares/isAdmin';
 
 export class SecuredRoutes {
   public userController: UserController = new UserController();

@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import { Model, DataTypes } from 'sequelize';
 import { hashSync, compareSync } from 'bcryptjs';
 
-import { database } from 'config/database';
+import { database } from 'configurations/database';
 
 export interface UserInterface {
   nickname: string;

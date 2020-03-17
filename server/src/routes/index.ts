@@ -1,4 +1,4 @@
-import { RootController } from 'controller/rootController';
+import { RootController } from 'controllers/rootController';
 
 export class RootRoutes {
   public rootController: RootController = new RootController();

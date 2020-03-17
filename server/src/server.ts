@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 
-import app from 'config/app';
-import { loadEnvironment } from 'config/environment';
-import { handleErrors } from 'config/errorHandler';
+import app from 'configurations/app';
+import { loadEnvironment } from 'configurations/environment';
+import { handleErrors } from 'configurations/errorHandler';
 
 console.clear();
 console.log(chalk.bgWhite.black('   * * * [ POKEMON SERVER] * * *   \n'));
