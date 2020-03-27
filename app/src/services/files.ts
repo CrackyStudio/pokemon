@@ -9,7 +9,7 @@ export const isExists = (file: string): boolean => {
 };
 
 export const isFullFilled = (array: string[]): boolean => {
-  const missingValues = array.filter((v: string): boolean => !process.env[v]);
+  const missingValues = array.filter((v: string): boolean => !process.env[`REACT_APP_${v}`]);
   if (isEmpty(missingValues)) {
     return true;
   }
