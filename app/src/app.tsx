@@ -9,7 +9,7 @@ import 'styles/app.css';
 
 const App: React.FC = () => {
   const [{ isConfigured }, dispatch] = useStateValue() as Array<any>;
-  const envValues: string[] = [];
+  const envValues: string[] = ['TEMP'];
 
   useEffect(() => {
     if (isConfigured === undefined) {
@@ -25,7 +25,9 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {isConfigured && <Home />}
-      {isConfigured === false && <InternalError />}
+      {isConfigured === false && (
+        <InternalError errorMessage="Some environment value(s) are missing in your .env file" />
+      )}
       {isConfigured === undefined && <Loader />}
     </div>
   );
