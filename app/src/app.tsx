@@ -5,7 +5,7 @@ import Home from 'screens/home';
 import InternalError from 'components/internalError';
 import Loader from 'components/loader';
 import { useStateValue } from 'hooks/provider';
-import 'styles/app.css';
+import 'styles/app.scss';
 
 const App: React.FC = () => {
   const [{ isConfigured }, dispatch] = useStateValue() as Array<any>;

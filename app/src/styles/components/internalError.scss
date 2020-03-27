@@ -1,0 +1,29 @@
+@import 'styles/variables/colors.scss';
+
+.internal-error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 25vh;
+    border: 1px solid $gray;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  strong {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: $red;
+  }
+}

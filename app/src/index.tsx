@@ -6,7 +6,7 @@ import State from 'hooks/state';
 import { StateProvider } from 'hooks/provider';
 import { Reducer } from 'hooks/reducer';
 import * as serviceWorker from 'serviceWorker';
-import 'styles/index.css';
+import 'styles/index.scss';
 
 ReactDOM.render(
   <StateProvider initialState={State} reducer={Reducer}>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'styles/components/internalError.css';
+import 'styles/components/internalError.scss';
 
 const InternalError = ({ errorMessage }: { errorMessage: string }) => {
   return (
