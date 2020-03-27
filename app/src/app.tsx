@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { isEmpty } from 'lodash';
 
 import Home from 'screens/home';
+import Loading from 'screens/loading';
 import InternalError from 'components/internalError';
-import Loader from 'components/loader';
 import { useStateValue } from 'hooks/provider';
 import 'styles/app.scss';
 
 const App: React.FC = () => {
   const [{ isConfigured }, dispatch] = useStateValue() as Array<any>;
-  const envValues: string[] = ['TEMP'];
+  const envValues: string[] = [];
 
   useEffect(() => {
     if (isConfigured === undefined) {
@@ -26,9 +26,9 @@ const App: React.FC = () => {
     <div className="App">
       {isConfigured && <Home />}
       {isConfigured === false && (
-        <InternalError errorMessage="Some environment value(s) are missing in your .env file" />
+        <InternalError errorMessage="Some environment value(s) are missing in your .env file. You will need to restart the app to apply changes." />
       )}
-      {isConfigured === undefined && <Loader />}
+      {isConfigured === undefined && <Loading />}
     </div>
   );
 };

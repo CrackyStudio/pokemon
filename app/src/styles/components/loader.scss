@@ -1,0 +1,37 @@
+@import 'styles/variables/colors.scss';
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loader {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: inline-block;
+      color: $red;
+      margin: 0 -0.05em;
+      margin-top: -25px;
+      font-size: 42px;
+      animation: loader 0.75s infinite alternate;
+      @for $i from 0 through 2 {
+        &:nth-child(#{$i + 1}) {
+          animation-delay: #{$i * 0.1}s;
+        }
+      }
+    }
+  }
+
+  @keyframes loader {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
