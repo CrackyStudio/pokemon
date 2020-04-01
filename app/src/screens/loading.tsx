@@ -6,9 +6,8 @@ import 'styles/screens/loading.scss';
 const Loading: React.FC = () => {
   return (
     <div className="loading-container">
-      <p>Please wait</p>
       <Loader />
-      <p>Loading game</p>
+      <p>Please wait while game is loading</p>
     </div>
   );
 };

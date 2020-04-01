@@ -13,10 +13,10 @@
 
     span {
       display: inline-block;
-      color: $red;
+      color: $gray;
       margin: 0 -0.05em;
-      margin-top: -25px;
-      font-size: 42px;
+      margin-top: -135px;
+      font-size: 200px;
       animation: loader 0.75s infinite alternate;
       @for $i from 0 through 2 {
         &:nth-child(#{$i + 1}) {
