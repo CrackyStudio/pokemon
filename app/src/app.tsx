@@ -27,11 +27,11 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {isConfigured === undefined && <Home />}
+      {isConfigured && <Home />}
       {isConfigured === false && (
         <InternalError errorMessage="Some environment value(s) are missing in your .env file. You will need to restart the app to apply changes." />
       )}
-      {isConfigured && <Loading />}
+      {isConfigured === undefined && <Loading />}
     </div>
   );
 };
