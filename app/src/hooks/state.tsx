@@ -5,4 +5,5 @@
 
 export default {
   isConfigured: undefined,
+  discordServerInfo: undefined,
 };

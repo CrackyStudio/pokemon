@@ -9,14 +9,13 @@ import 'styles/app.scss';
 
 const App: React.FC = () => {
   const [{ isConfigured }, dispatch] = useStateValue() as Array<any>;
-  const envValues: string[] = ['PORT'];
+  const envValues: string[] = ['PORT', 'DISCORD_GUILD'];
 
   useEffect(() => {
     if (isConfigured === undefined) {
       const missingValues = envValues.filter((v: string): boolean =>
-        v === 'PORT' ? false : true || !process.env[`REACT_APP_${v}`],
+        v === ('PORT' || 'BROWSER') ? false : !process.env[`REACT_APP_${v}`],
       );
-      console.log(missingValues);
       if (isEmpty(missingValues)) {
         dispatch({ key: 'isConfigured', value: true });
       } else {
