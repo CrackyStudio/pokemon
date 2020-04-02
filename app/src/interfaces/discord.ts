@@ -1,4 +1,4 @@
-export interface Player {
+export interface User {
   id: string;
   username: string;
   discriminator: string;

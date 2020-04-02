@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import discordAPI from 'services/discordAPI';
-import { Player, Channel } from 'interfaces/discord';
+import { User, Channel } from 'interfaces/discord';
 import { useStateValue } from 'hooks/provider';
 import 'styles/components/discord.scss';
 
@@ -16,38 +16,38 @@ const Discord = () => {
     }
   }, [discordServerInfo, dispatch]);
 
-  const isConnected = (player: Player): boolean => {
-    if (!player.channel_id) {
+  const isConnected = (user: User): boolean => {
+    if (!user.channel_id) {
       return false;
     }
     return true;
   };
 
-  const renderConnectedPlayers = () => {
-    const players: JSX.Element[] = [];
+  const renderConnectedusers = () => {
+    const users: JSX.Element[] = [];
 
-    discordServerInfo.members.forEach((player: Player) => {
-      if (isConnected(player)) {
-        players.push(renderPlayer(player));
+    discordServerInfo.members.forEach((user: User) => {
+      if (isConnected(user)) {
+        users.push(renderuser(user));
       }
     });
-    return players;
+    return users;
   };
 
-  const renderPlayer = (player: Player) => {
-    const channel = getChannel(player);
+  const renderuser = (user: User) => {
+    const channel = getChannel(user);
 
     return (
-      <div key={player.id}>
+      <div key={user.id}>
         <p>
-          {player.username} in {channel}
+          {user.username} in {channel}
         </p>
       </div>
     );
   };
 
-  const getChannel = (player: Player): string => {
-    return discordServerInfo.channels.find((channel: Channel) => channel.id === player.channel_id).name;
+  const getChannel = (user: User): string => {
+    return discordServerInfo.channels.find((channel: Channel) => channel.id === user.channel_id).name;
   };
 
   return (
@@ -56,8 +56,8 @@ const Discord = () => {
       {discordServerInfo && (
         <div>
           <p>Server name: {discordServerInfo.name}</p>
-          <p>{discordServerInfo.members.length} players online</p>
-          {discordServerInfo.members && renderConnectedPlayers()}
+          <p>{discordServerInfo.members.length} users online</p>
+          {discordServerInfo.members && renderConnectedusers()}
         </div>
       )}
     </div>
